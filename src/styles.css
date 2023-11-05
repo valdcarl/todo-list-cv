@@ -1,0 +1,18 @@
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333333;  /* Olive Drab */
+    color: #e2e8f0;             /* Tailwind Slate 200 */
+    margin: 0 auto;
+    padding: 1.5rem;
+    max-width: 500px;
+}
+
+/* rest of the css will be forms/buttons/lists/rows/etc. to be determined */
