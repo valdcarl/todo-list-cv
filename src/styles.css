@@ -12,7 +12,49 @@ body {
     color: #e2e8f0;             /* Tailwind Slate 200 */
     margin: 0 auto;
     padding: 1rem;
-    max-width: 400px;
+    /* max-width: 400px; */
 }
 
 /* rest of the css will be forms/buttons/lists/rows/etc. to be determined */
+.app-header {
+    font-weight: 400;
+    text-align: center;
+    padding: 3rem;
+}
+
+.new-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.form-input-element {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+}
+
+#task {
+    min-width: 400px;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 0.25rem;
+}
+
+.add-task-btn {
+    width: 30px;
+    background: hsla(0, 100%, 100%, 0.50);
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.add-task-btn:hover, .add-task-btn:focus-visible {
+    color: white;
+}
