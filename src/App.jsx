@@ -9,7 +9,7 @@ function App() {
         <div className='form-row'>
           <div className='form-input-element'>
             <label htmlFor='task'></label>
-            <input type='text' id='task' placeholder=" Enter Task Here"/>
+            <input type='text' id='task' placeholder="Enter Task Here"/>
             <button className='add-task-btn' aria-label='Add Task' type='submit'><PlusIcon/>
             </button>
           </div>
