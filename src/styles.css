@@ -17,7 +17,8 @@ body {
 
 /* rest of the css will be forms/buttons/lists/rows/etc. to be determined */
 .app-header {
-    font-weight: 400;
+    font-weight: 500;
+    align-items: center;
     text-align: center;
     padding: 3rem;
 }
