@@ -12,7 +12,7 @@ function App() {
     /** handles when a new todo is submitted from out form input 
      *  we want our app to rerender with this change to take effect
     */
-    // prevent the
+    // prevent the default action from being taken from a form
     e.preventDefault();
 
     // I know I cant modify todos, so I'm using the spread operator to get a new array
