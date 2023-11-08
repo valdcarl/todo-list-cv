@@ -43,7 +43,7 @@ body {
 }
 
 #task {
-    min-width: 300px;
+    min-width: 330px;
     border: 1px solid hsl(0, 0%, 100%);
     border-radius: 0.25rem;
 }
