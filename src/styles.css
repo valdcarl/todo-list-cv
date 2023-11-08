@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #333333;  /* Olive Drab */
-    color: #e2e8f0;             /* Tailwind Slate 200 */
+    background-color: rgb(15 23 42);
+    color: #e2e8f0;
     margin: 0 auto;
     padding: 1rem;
     /* max-width: 400px; */

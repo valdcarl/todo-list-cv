@@ -73,7 +73,7 @@ function App() {
       </form>
 
       <ul className='todo-list-section'>
-        {todos.length === 0 && "Nothing For Now!"}
+        {todos.length === 0 && <em>Nothing for now! 💤</em>}
         {todos.map(todo => {
           return (
             <li key={todo.id}>
