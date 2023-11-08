@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { PlusIcon, TrashIcon } from '@heroicons/react/24/solid';
 import "./styles.css";
 
+import TodoHeader from './components/TodoHeader';
+
 function App() {
   //states
   const [newTask, setNewTask] = useState("");   // for todo input field
@@ -54,9 +56,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1 className='app-header'>
-        TODO LIST
-      </h1>
+      <TodoHeader/>
       <form onSubmit={handleSubmit} className='new-task-form'> 
         <div className='form-row'>
           <div className='form-input-element'>
