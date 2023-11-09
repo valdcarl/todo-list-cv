@@ -1,33 +1,23 @@
 import { useState } from 'react';
-import { PlusIcon, TrashIcon } from '@heroicons/react/24/solid';
+import { TrashIcon } from '@heroicons/react/24/solid';
 import "./styles.css";
 
 import TodoHeader from './components/TodoHeader';
+import TodoForm from './components/TodoForm';
 
 function App() {
   //states
-  const [newTask, setNewTask] = useState("");   // for todo input field
   const [todos, setTodos] = useState([]);       // to create the array of todos
-
-  // submitting todos to our list
-  function handleSubmit(e) {
-    /** handles when a new todo is submitted from out form input 
-     *  we want our app to rerender with this change to take effect
-    */
-    // prevent the default action from being taken from a form
-    e.preventDefault();
-
-    // I know I cant modify todos, so I'm using the spread operator to get a new array
+  
+  function addTodo(title) {
     setTodos((currentTodos) => {
       return [
         ...currentTodos, 
-        { id: crypto.randomUUID(), title: newTask, completed: false },
+        { id: crypto.randomUUID(), title, completed: false },
       ]
     })
-
-    setNewTask("");   // so that the new todo is cleared after submission
   }
-  
+
   // for toggling completion of a todo
   function toggleTodo(id, completed) {
     /** takes id and if that id is checked to be marked as completed */
@@ -57,20 +47,8 @@ function App() {
   return (
     <div className='container'>
       <TodoHeader/>
-      <form onSubmit={handleSubmit} className='new-task-form'> 
-        <div className='form-row'>
-          <div className='form-input-element'>
-            <label htmlFor='task'></label>
-            <input 
-              value={newTask} 
-              onChange={e => setNewTask(e.target.value)}
-              type='text' 
-              id='task' 
-              placeholder="Enter Task Here"/>
-            <button className='add-task-btn' aria-label='Add Task' type='submit'><PlusIcon/> </button>
-          </div>
-        </div>
-      </form>
+
+      <TodoForm onSubmitAddTodo={addTodo} />
 
       <ul className='todo-list-section'>
         {todos.length === 0 && <em>Nothing for now! 💤</em>}
