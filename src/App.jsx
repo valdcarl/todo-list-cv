@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { TrashIcon } from '@heroicons/react/24/solid';
 import "./styles.css";
 
 import TodoHeader from './components/TodoHeader';
 import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 function App() {
-  //states
-  const [todos, setTodos] = useState([]);       // to create the array of todos
+  const [todos, setTodos] = useState([]);
   
   function addTodo(title) {
     setTodos((currentTodos) => {
@@ -41,37 +40,13 @@ function App() {
     setTodos(currentTodos => {
       return currentTodos.filter(todo => todo.id !== id)
     })
-
   }
 
   return (
     <div className='container'>
       <TodoHeader/>
-
       <TodoForm onSubmitAddTodo={addTodo} />
-
-      <ul className='todo-list-section'>
-        {todos.length === 0 && <em>Nothing for now! 💤</em>}
-        {todos.map(todo => {
-          return (
-            <li key={todo.id}>
-              <label>
-                <input 
-                  type='checkbox' 
-                  checked={todo.completed}
-                  onChange={e => toggleTodo(todo.id, e.target.checked)} 
-                />
-                {todo.title}
-              </label>
-              <button 
-                onClick={() => deleteTodo(todo.id)}
-                className='delete-task-btn' 
-                aria-label='Delete Task'><TrashIcon/> 
-              </button>
-            </li>
-          )
-        })}
-      </ul>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
     </div>
   )
 }
